@@ -10,20 +10,17 @@ namespace MedShare.Controllers {
             _context = context;
         }
 
-        /*Função que traz os atributos da classe Doador e mostra na tela.*/
         public async Task<IActionResult> Index() {
             var dados = await _context.Doadors.ToListAsync();
 
             return View(dados);
         }
 
-        /*Abaixo a função que representa get para recuperação dos dados inseridos*/
         public IActionResult Create() 
         {
             return View();
         }
 
-        /*Abaixo a função que representa post para inserir dados*/
         [HttpPost]
         public async Task<IActionResult> Create(Doador doador) 
         {
